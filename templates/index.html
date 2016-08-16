@@ -20,10 +20,12 @@
   <body>
     <h1>{{title}}</h1>
     {% for monster in pokemon: %}
-      <p>{{monster.say_hi()}}</p>
+      <p>{{monster.greeting()}}</p>
     {% endfor %}
     <form action="/new" method="POST">
-      <input type="text" placeholder="pokemon greeting" name="pokemon">
+      <input type="text" placeholder="pokemon name" name="name">
+      <input type="text" placeholder="pokemon type 1" name="type_1">
+      <input type="text" placeholder="pokemon type 2" name="type_2">
       <input type="submit">
     </form>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
