@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
-from model import Pokemon, db
+from model import Pokemon, db, migrate
+from flask_migrate import Migrate
 
 app = Flask(__name__)
+migrate = Migrate(app, db)
 
 @app.route("/", methods=['GET'])
 def index():
@@ -25,4 +27,4 @@ def view_pokemon(pokemon_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
