@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <h3>Sign Up</h3>
+    <form method="POST" action="/trainer/signup">
+      {{ signup.csrf_token }}
+      {{ signup.username.label }} {{ signup.username(size=15) }}
+      {{ signup.password.label }} {{ signup.password(size=30) }}
+      {{ signup.age.label }} {{ signup.age(type='number') }}
+      <input type="submit" value="Add">
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h3>Log In</h3>
+    <form method="POST" action="/trainer/login">
+      {{ login.csrf_token }}
+      {{ login.username.label }} {{ login.username(size=15) }}
+      {{ login.password.label }} {{ login.password(size=30) }}
+      <input type="submit" value="Add">
+    </form>
+  </div>
+</div>
+{% endblock %}
